@@ -58,3 +58,6 @@ netstat -ano | findstr :8000
 
 ### Liberar puertos
 taskkill /PID 8584 /F
+
+### Diagramas
+https://excalidraw.com/#json=XMY3ohJ3Cv0ys7decVDZ9,yRm-CpchIlzwduCQbuu-iA
