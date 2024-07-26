@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Arquitectura Hexagonal</title>
+
+		<meta name="description" content="Arquitectura Hexagonal">
+		<meta name="author" content="Luis Arturo Munguia Valdes">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<a href="https://revealjs.com">
+						<img src="images/hexagono.svg" alt="Hexagono" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>Arquitectura Hexagonal</h3>
+					<p>
+						<small>Luis Arturo Mungu&iacute;a Vald&eacute;s</small>
+					</p>
+				</section>
+
+				<section>
+					<section data-background="#4d7e65">
+						<h2>Arquitectura de Software</h2>
+						<p>
+							La arquitectura de software es el diseño fundamental que define la estructura, componentes y relaciones de un sistema informático.
+						</p>
+					</section>
+					<section data-background="">
+						Un proposito fundamental es que debe soportar el ciclo de vida de los sistemas:
+						<br />
+						<img src="images/ciclovida.svg" alt="Ciclo de vida Software"/>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section data-background="#FF1544">
+						<h2>Arquitectura Hexagonal</h2>
+						<ul>
+							<li>Esta basada en el Domain Driven Design y Multi Tier.</li>
+							<li>Promueve aislar el core del sistema del exterior.</li>
+							<li>Propuesta por Alistair Cockburn en 2005</li>
+							<li>Prumueve resolver problemas de la arquitectura de capas</li>
+						</ul>
+					</section>
+					<section data-background="#C9E265">
+						<h2>Principios fundamentales</h2>
+						<ul>
+							<li>Independencia de la infraestructura, el nucleo no depende de las tecnologías</li>
+							<li>Separación de Preocupaciones, aisla la lógica y la infraestructura</li>
+							<li>Puertos y Adaptadores para interactuar con el exterior</li>							
+						</ul>
+					</section>
+										
+				</section>
+				<section data-background="#A7A5FE">
+					<h2>Beneficios de Arquitectura Hexagonal</h2>
+					<ul>
+						<li>Alta mantenibilidad</li>
+						<li>Alta adaptabilidad</li>
+						<li>Simplicidad en las pruebas</li>
+					</ul>
+				</section>
+				<section data-background="#A7A5FE">
+					<h2>Desafios</h2>
+					<ul>
+						<li>Curva de aprendisaje</li>
+						<li>Sobrecarga en proyectos pequeños</li>
+						<li>Mayor tiempo de desarrollo</li>
+						<li>Resistencia del equipo de desarrollo</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Arquitectura de 4 Capas</h2>
+					<img src="images/4capas.svg" alt="4 Capas"/>
+				</section>
+				<section data-auto-animate>
+					<section data-background="#00FFCF">
+						<h2>Puertos</h2>
+						<pre data-id="code-animation">
+							<code class="hljs javascript"
+							data-line-numbers=""
+							data-trim>
+								<script type="text/template">
+									import { ports } from 'hexagonal';
+	
+									console.log(`Los Puertos  son interfaces por`);
+									console.log("las que fluye la información");
+									console.log("a las capas inferiores del sistema");
+
+									// No son puertos físicos
+								</script>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2 data-id="code-title">Puertos</h2>
+						<img src="images/puertos.svg" alt="Puertos" width="600px"/>								
+					</section>
+					
+				</section>
+
+				<section data-auto-animate>
+					<section data-background="#A7A5FE">
+						<h2 data-id="code-title">Adaptadores</h2>
+						<p>
+							<ul>
+								<li>Son implementaciones de los puertos</li>
+								<li>Son totalmente reemplazables</li>
+								<li>No se deben comunicar entre sí</li>
+								<li>Mantienen el nucleo separado</li>
+								<li>Se encargan de funciones especificas</li>
+							</ul>
+						</p>						
+					</section>
+					<section data-background="#0083EC">
+						<h2 data-id="code-title">Adaptadores Entrada</h2>
+						<p>							
+							<ul>
+								<li>API</li>
+								<li>UI</li>
+								<li>Consumidor de mensajes</li>
+								<li>CLI</li>
+							</ul>
+						</p>						
+					</section>
+					<section data-background="#F7B300">
+						<h2 data-id="code-title">Adaptadores Salida</h2>
+						<p>							
+							<ul>
+								<li>BDD</li>
+								<li>Clientes a servicios</li>
+								<li>Eventos</li>
+								<li>Mail, SMS, Etc</li>
+							</ul>
+						</p>						
+					</section>
+					<section>
+						<h2 data-id="code-title">Adaptadores</h2>
+						<img src="images/edaptadores.svg" alt="Adaptadores" width="600px"/>								
+					</section>
+				</section>
+				<section data-auto-animate>
+					<section data-background="#00884C">
+						<h2 data-id="code-title">Servicios de aplicación</h2>
+						<p>
+							<ul>
+								<li>Capa de Aplicación DDD</li>
+								<li>Implementación de Casos de Uso</li>
+								<li>No contienen logica de dominio</li>
+								<li>Interaccion con las capas externas</li>
+							</ul>
+						</p>						
+					</section>
+					<section>
+						<h2 data-id="code-title">Servicios de aplicación</h2>
+						<img src="images/aplicacion.svg" alt="Adaptadores" width="600px"/>								
+					</section>
+				</section>
+				<section data-auto-animate>
+					<section data-background="#0083EC">
+						<h2 data-id="code-title">Dominio</h2>
+						<p>
+							<ul>
+								<li>Entidades</li>
+								<li>Value Objects</li>
+								<li>Agregates</li>
+								<li>Servicios de dominio</li>
+							</ul>
+						</p>						
+					</section>
+					<section>
+						<h2 data-id="code-title">Dominio</h2>
+						<img src="images/dominio.svg" alt="Dominio" width="600px"/>
+					</section>
+				</section>
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+					<h2>Arquitectura Completa</h2>
+				</section>
+				<section>
+					<h2 data-id="code-title">Arquitectutura Hexagonal</h2>
+					<p>
+						<img src="images/arquitectura_hexagonal.svg" alt="Dominio" width="750px"/>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Referencias</h2>
+					<p>
+						<ul style="font-size: 20px;">
+							<li>
+								<a href="https://banorte.udemy.com/course/arquitectura-software-moderna-ddd-eventos-microservicios-cqrs/learn/lecture/32321312#overview" target="_blank">https://banorte.udemy.com/course/arquitectura-software-moderna-ddd-eventos-microservicios-cqrs/learn/lecture/32321312#overview</a>  
+							</li>							
+							<li>
+								<a href="https://medium.com/@edusalguero/arquitectura-hexagonal-59834bb44b7f" target="_blank">https://medium.com/@edusalguero/arquitectura-hexagonal-59834bb44b7f</a>
+							</li>
+							<li>
+								<a href="https://platzi.com/blog/arquitectura-hexagonal/" target="_blank">https://platzi.com/blog/arquitectura-hexagonal/</a>
+							</li>
+							<li>
+								<a href="https://softwarecrafters.io/react/arquitectura-hexagonal-frontend" target="_blank">https://softwarecrafters.io/react/arquitectura-hexagonal-frontend</a>
+							</li>
+							<li>
+								<a href="https://github.com/danielblanco96/arquitectura-software-udemy/blob/main/hexagonal-architecture/src/main/java/com/danielblanco/arquitecturasmodernas/hexagonal/domain/TennisMatch.java" target="_blank">https://github.com/danielblanco96/arquitectura-software-udemy/blob/main/hexagonal-architecture/src/main/java/com/danielblanco/arquitecturasmodernas/hexagonal/domain/TennisMatch.java </a>
+							</li>
+							<li>
+								<a href="https://alistair.cockburn.us/hexagonal-architecture/" target="_blank">https://alistair.cockburn.us/hexagonal-architecture/</a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/pulse/hexagonal-architecture-davi-junior/" target="_blank">https://www.linkedin.com/pulse/hexagonal-architecture-davi-junior/</a>
+							</li>
+						</ul>
+					</p>					
+				</section>
+<!-- ##FIN## -->
+				<section data-background="#FFD96A">
+				<h2>Mermaid Diagram</h2>				
+					<div class="mermaid">
+						sequenceDiagram
+    participant Client as Cliente
+    participant API as API
+    participant Keycloak as Keycloak
+
+    %% Paso 1: Cliente solicita acceso a un recurso
+    Client->>API: Solicitud de acceso al recurso
+
+    %% Paso 2: API redirige al cliente a Keycloak para autenticación
+    API->>Client: Redirigir a Keycloak (URL de autorización)
+
+    %% Paso 3: Cliente envía credenciales a Keycloak
+    Client->>Keycloak: Enviar credenciales (usuario/contraseña)
+
+    %% Paso 4: Keycloak valida credenciales y redirige de vuelta a la API con un código de autorización
+    Keycloak->>Client: Redirigir a API con código de autorización
+
+    %% Paso 5: Cliente envía el código de autorización a la API
+    Client->>API: Enviar código de autorización
+
+    %% Paso 6: API envía el código de autorización a Keycloak para obtener un token
+    API->>Keycloak: Solicitar token (código de autorización)
+
+    %% Paso 7: Keycloak responde con un token de acceso
+    Keycloak->>API: Enviar token de acceso
+
+    %% Paso 8: API entrega el recurso al cliente, usando el token de acceso
+    API->>Client: Entregar recurso
+
+
+					</div>				
+				</section>
+				
+				
+
+				<section style="text-align: left;">
+					<h1>Gracias por su atención</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<!--<script src="node_modules/mermaid/dist/mermaid.min.js"></script>-->
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+		<script>
+			mermaid.initialize({ startOnLoad: true });
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+			// Initialize Mermaid diagrams
+			Reveal.on('slidechanged', function(event) {
+				mermaid.init(undefined, event.currentSlide.querySelectorAll('.mermaid'));
+			});
+
+		</script>
+
+	</body>
+</html>
