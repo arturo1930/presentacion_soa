@@ -28,17 +28,22 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<a href="https://revealjs.com">
+				<section data-transition="zoom">
+					<a>
 						<img src="images/hexagono.svg" alt="Hexagono" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
 					</a>
 					<h3>Arquitectura Hexagonal</h3>
 					<p>
 						<small>Luis Arturo Mungu&iacute;a Vald&eacute;s</small>
+						<br />
+						<small>luis.munguia.valdes@banorte.com</small>
 					</p>
 				</section>
 
-				<section>
+				<section data-transition="convex">
+					<img src="images/likehexagonal.jpg"style="height:600px"  alt="like hexagonal"/>
+				</section>
+				<section data-transition="concave">
 					<section data-background="#4d7e65">
 						<h2>Arquitectura de Software</h2>
 						<p>
@@ -54,7 +59,7 @@
 
 				<!-- Example of nested vertical slides -->
 				<section>
-					<section data-background="#FF1544">
+					<section data-background="#FF1544" data-transition="zoom">
 						<h2>Arquitectura Hexagonal</h2>
 						<ul>
 							<li>Esta basada en el Domain Driven Design y Multi Tier.</li>
@@ -63,7 +68,7 @@
 							<li>Prumueve resolver problemas de la arquitectura de capas</li>
 						</ul>
 					</section>
-					<section data-background="#C9E265">
+					<section data-background="#C9E265" data-transition="zoom">
 						<h2>Principios fundamentales</h2>
 						<ul>
 							<li>Independencia de la infraestructura, el nucleo no depende de las tecnologías</li>
@@ -73,15 +78,17 @@
 					</section>
 										
 				</section>
-				<section data-background="#A7A5FE">
+				<section data-background="#A7A5FE" data-transition="zoom">
 					<h2>Beneficios de Arquitectura Hexagonal</h2>
 					<ul>
 						<li>Alta mantenibilidad</li>
 						<li>Alta adaptabilidad</li>
 						<li>Simplicidad en las pruebas</li>
+						<li>Flexible con tecnologías externas</li>
+						<li>Permite retrasar la elección tecnológica</li>
 					</ul>
 				</section>
-				<section data-background="#FBC117">
+				<section data-background="#FBC117" data-transition="concave"> 
 					<h2>Desafios</h2>
 					<ul>
 						<li>Curva de aprendisaje</li>
@@ -90,11 +97,24 @@
 						<li>Resistencia del equipo de desarrollo</li>
 					</ul>
 				</section>
-				<section>
+				<section data-background="#24ACF2" data-transition="convex">
+					<h2>Cuando es recomendable</h2>
+					<ul>
+						<li>Incertidumbre en las tecnologías</li>
+						<li>Proyectos con tiempo de vida largo</li>
+						<li>Cuando se requiere flexibilidad</li>
+						<li>Equipos con cierto expertice</li>
+					</ul>
+				</section>
+				<section data-transition="zoom">
 					<h2>Arquitectura de 4 Capas</h2>
 					<img src="images/4capas.svg" alt="4 Capas"/>
 				</section>
-				<section data-auto-animate>
+				<section data-transition="zoom" data-background="#BC7C49">
+					<h2>Arquitectura Hexagonal</h2>
+					<img src="images/hexagono.svg" alt="Hexagonal"/>
+				</section>
+				<section data-transition="zoom">
 					<section data-background="#00FFCF">
 						<h2>Puertos</h2>
 						<pre data-id="code-animation">
@@ -113,15 +133,15 @@
 							</code>
 						</pre>
 					</section>
-					<section>
+					<section data-transition="convex">
 						<h2 data-id="code-title">Puertos</h2>
 						<img src="images/puertos.svg" alt="Puertos" width="600px"/>								
 					</section>
 					
 				</section>
 
-				<section data-auto-animate>
-					<section data-background="#A7A5FE">
+				<section data-transition="zoom">
+					<section data-background="#A7A5FE" data-transition="convex">
 						<h2 data-id="code-title">Adaptadores</h2>
 						<p>
 							<ul>
@@ -133,7 +153,7 @@
 							</ul>
 						</p>						
 					</section>
-					<section data-background="#0083EC">
+					<section data-background="#0083EC" data-transition="convex">
 						<h2 data-id="code-title">Adaptadores Entrada</h2>
 						<p>							
 							<ul>
@@ -144,7 +164,7 @@
 							</ul>
 						</p>						
 					</section>
-					<section data-background="#F7B300">
+					<section data-background="#F7B300" data-transition="convex">
 						<h2 data-id="code-title">Adaptadores Salida</h2>
 						<p>							
 							<ul>
@@ -194,14 +214,23 @@
 						<img src="images/dominio.svg" alt="Dominio" width="600px"/>
 					</section>
 				</section>
-				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+				<section data-background="images/surprice.gif" data-transition="zoom">
 					<h2>Arquitectura Completa</h2>
 				</section>
-				<section>
+				<section data-transition="zoom">
 					<h2 data-id="code-title">Arquitectutura Hexagonal</h2>
 					<p>
 						<img src="images/arquitectura_hexagonal.svg" alt="Dominio" width="750px"/>
 					</p>
+				</section>
+				<section data-background="" data-transition="zoom">
+					<h2>El software no es una ciencia exacta</h2>
+					<ul>
+						<li>El mejor profesor es la prueba y error</li>
+						<li>La arquitectura se debe adaptar al equipo</li>
+						<li>Siempre se debe ser flexible y estar abierto al cambio</li>
+						<li>Siempre aplicar proporcionalidad</li>
+					</ul>
 				</section>
 
 				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
@@ -209,69 +238,31 @@
 					<p>
 						<ul style="font-size: 20px;">
 							<li>
-								<a href="https://banorte.udemy.com/course/arquitectura-software-moderna-ddd-eventos-microservicios-cqrs/learn/lecture/32321312#overview" target="_blank">https://banorte.udemy.com/course/arquitectura-software-moderna-ddd-eventos-microservicios-cqrs/learn/lecture/32321312#overview</a>  
+								<a style="color: antiquewhite;" href="https://banorte.udemy.com/course/arquitectura-software-moderna-ddd-eventos-microservicios-cqrs/learn/lecture/32321312#overview" target="_blank">https://banorte.udemy.com/course/arquitectura-software-moderna-ddd-eventos-microservicios-cqrs/learn/lecture/32321312#overview</a>  
 							</li>							
 							<li>
-								<a href="https://medium.com/@edusalguero/arquitectura-hexagonal-59834bb44b7f" target="_blank">https://medium.com/@edusalguero/arquitectura-hexagonal-59834bb44b7f</a>
+								<a style="color: antiquewhite;" href="https://medium.com/@edusalguero/arquitectura-hexagonal-59834bb44b7f" target="_blank">https://medium.com/@edusalguero/arquitectura-hexagonal-59834bb44b7f</a>
 							</li>
 							<li>
-								<a href="https://platzi.com/blog/arquitectura-hexagonal/" target="_blank">https://platzi.com/blog/arquitectura-hexagonal/</a>
+								<a style="color: antiquewhite;" href="https://platzi.com/blog/arquitectura-hexagonal/" target="_blank">https://platzi.com/blog/arquitectura-hexagonal/</a>
 							</li>
 							<li>
-								<a href="https://softwarecrafters.io/react/arquitectura-hexagonal-frontend" target="_blank">https://softwarecrafters.io/react/arquitectura-hexagonal-frontend</a>
+								<a style="color: antiquewhite;" href="https://softwarecrafters.io/react/arquitectura-hexagonal-frontend" target="_blank">https://softwarecrafters.io/react/arquitectura-hexagonal-frontend</a>
 							</li>
 							<li>
-								<a href="https://github.com/danielblanco96/arquitectura-software-udemy/blob/main/hexagonal-architecture/src/main/java/com/danielblanco/arquitecturasmodernas/hexagonal/domain/TennisMatch.java" target="_blank">https://github.com/danielblanco96/arquitectura-software-udemy/blob/main/hexagonal-architecture/src/main/java/com/danielblanco/arquitecturasmodernas/hexagonal/domain/TennisMatch.java </a>
+								<a style="color: antiquewhite;" href="https://github.com/danielblanco96/arquitectura-software-udemy/blob/main/hexagonal-architecture/src/main/java/com/danielblanco/arquitecturasmodernas/hexagonal/domain/TennisMatch.java" target="_blank">https://github.com/danielblanco96/arquitectura-software-udemy/blob/main/hexagonal-architecture/src/main/java/com/danielblanco/arquitecturasmodernas/hexagonal/domain/TennisMatch.java </a>
 							</li>
 							<li>
-								<a href="https://alistair.cockburn.us/hexagonal-architecture/" target="_blank">https://alistair.cockburn.us/hexagonal-architecture/</a>
+								<a style="color: antiquewhite;" href="https://alistair.cockburn.us/hexagonal-architecture/" target="_blank">https://alistair.cockburn.us/hexagonal-architecture/</a>
 							</li>
 							<li>
-								<a href="https://www.linkedin.com/pulse/hexagonal-architecture-davi-junior/" target="_blank">https://www.linkedin.com/pulse/hexagonal-architecture-davi-junior/</a>
+								<a style="color: antiquewhite;" href="https://www.linkedin.com/pulse/hexagonal-architecture-davi-junior/" target="_blank">https://www.linkedin.com/pulse/hexagonal-architecture-davi-junior/</a>
 							</li>
 						</ul>
 					</p>					
 				</section>
-<!-- ##FIN## -->
-				<section data-background="#FFD96A">
-				<h2>Mermaid Diagram</h2>				
-					<div class="mermaid">
-						sequenceDiagram
-    participant Client as Cliente
-    participant API as API
-    participant Keycloak as Keycloak
 
-    %% Paso 1: Cliente solicita acceso a un recurso
-    Client->>API: Solicitud de acceso al recurso
-
-    %% Paso 2: API redirige al cliente a Keycloak para autenticación
-    API->>Client: Redirigir a Keycloak (URL de autorización)
-
-    %% Paso 3: Cliente envía credenciales a Keycloak
-    Client->>Keycloak: Enviar credenciales (usuario/contraseña)
-
-    %% Paso 4: Keycloak valida credenciales y redirige de vuelta a la API con un código de autorización
-    Keycloak->>Client: Redirigir a API con código de autorización
-
-    %% Paso 5: Cliente envía el código de autorización a la API
-    Client->>API: Enviar código de autorización
-
-    %% Paso 6: API envía el código de autorización a Keycloak para obtener un token
-    API->>Keycloak: Solicitar token (código de autorización)
-
-    %% Paso 7: Keycloak responde con un token de acceso
-    Keycloak->>API: Enviar token de acceso
-
-    %% Paso 8: API entrega el recurso al cliente, usando el token de acceso
-    API->>Client: Entregar recurso
-
-
-					</div>				
-				</section>
-				
-				
-
-				<section style="text-align: left;">
+				<section style="text-align: left;" data-background="images/gracias.gif">
 					<h1>Gracias por su atención</h1>
 				</section>
 
@@ -280,7 +271,6 @@
 		</div>
 
 		<script src="dist/reveal.js"></script>
-		<!--<script src="node_modules/mermaid/dist/mermaid.min.js"></script>-->
 		<script src="plugin/zoom/zoom.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/search/search.js"></script>
